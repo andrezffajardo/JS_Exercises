@@ -1,10 +1,10 @@
 console.log("Hola Mundo");
 let myfirstvariable = "My First Variable!";
-console.log(myfirstvariable);
+// console.log(myfirstvariable);
 
 // mutability
 myfirstvariable = "It's Change";
-console.log(myfirstvariable);
+// console.log(myfirstvariable);
 
 // boolean
 let myBoolean = true;
@@ -14,11 +14,23 @@ let myNumber = 0;
 let myNumber2 = 12;
 let myNumber3 = -258;
 
-console.log(myNumber, myNumber2, myBoolean, myfirstvariable);
+/// console.log(myNumber, myNumber2, myBoolean, myfirstvariable);
 
 let undef;
-console.log(undef);
+// console.log(undef);
 
 let nulo = null;
 
-console.log(nulo);
+// console.log(nulo);
+
+// Object empty
+
+const myFirstObject = {};
+
+// Object
+const myObject = {
+  aNumber: 12,
+  aString: "A character string",
+  aCondition: true,
+};
+console.log(myObject.aString);
