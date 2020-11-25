@@ -33,4 +33,22 @@ const myObject = {
   aString: "A character string",
   aCondition: true,
 };
+
 console.log(myObject.aString);
+
+const arrEmpty = [];
+const arr = [1, 2, "Hola", "Mundo", myObject];
+
+// console.log(arrEmpty, arr);
+
+// arr.push(5);
+
+// console.log(arr);
+
+arrEmpty.push(5);
+arrEmpty.push(3);
+arrEmpty.push(1);
+arrEmpty.push("Hola");
+arrEmpty.push(myfirstvariable);
+
+console.log(arrEmpty);
