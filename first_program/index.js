@@ -106,10 +106,21 @@ const res12 = 5 != "5";
 // logical operators
 
 const orRes = false || false || "hola" || "Mundo";
-console.log(orRes);
+// console.log(orRes);
 
 const andRes = true && false;
 // console.log(andRes);
 
 const notRes = !false;
-console.log(notRes);
+// console.log(notRes);
+
+// Control flow
+
+const age = 6;
+if (age > 5 && age < 18) {
+  console.log("The kid can play");
+} else {
+  console.log("The kid can not play :(");
+}
+
+console.log("End");
