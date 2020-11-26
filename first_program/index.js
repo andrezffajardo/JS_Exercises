@@ -101,4 +101,15 @@ const res10 = 5 >= 6;
 const res11 = 5 !== "5";
 const res12 = 5 != "5";
 
-console.log(res3, res4, res5, res6, res7, res8, res9, res10, res11, res12);
+// console.log(res3, res4, res5, res6, res7, res8, res9, res10, res11, res12);
+
+// logical operators
+
+const orRes = false || false || "hola" || "Mundo";
+console.log(orRes);
+
+const andRes = true && false;
+// console.log(andRes);
+
+const notRes = !false;
+console.log(notRes);
