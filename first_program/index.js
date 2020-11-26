@@ -82,4 +82,23 @@ num -= 5;
 num *= 5;
 num /= 2;
 
-console.log(num);
+// console.log(num);
+
+// comparison operators
+
+const res1 = 5 === 6;
+const res2 = 5 == "5";
+
+const res3 = 5 < 6;
+const res4 = 5 < 5;
+const res5 = 5 > 6;
+const res6 = 5 > 4;
+const res7 = 5 <= 5;
+const res8 = 5 <= 6;
+const res9 = 5 >= 5;
+const res10 = 5 >= 6;
+
+const res11 = 5 !== "5";
+const res12 = 5 != "5";
+
+console.log(res3, res4, res5, res6, res7, res8, res9, res10, res11, res12);
