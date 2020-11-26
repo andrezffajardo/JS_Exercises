@@ -34,8 +34,9 @@ const myObject = {
   aCondition: true,
 };
 
-console.log(myObject.aString);
+// console.log(myObject.aString);
 
+// array
 const arrEmpty = [];
 const arr = [1, 2, "Hola", "Mundo", myObject];
 
@@ -51,4 +52,34 @@ arrEmpty.push(1);
 arrEmpty.push("Hola");
 arrEmpty.push(myfirstvariable);
 
-console.log(arrEmpty);
+// console.log(arrEmpty);
+
+const suma = 1 + 2;
+const restar = 1 - 2;
+const multiplicar = 2 * 3;
+const division = 9 / 3;
+
+// console.log(suma, restar, multiplicar, division);
+
+const modulo = 10 % 3;
+// console.log(modulo);
+
+let num = 5;
+//num++;
+//num++;
+//num++;
+//num++;
+//num++;
+
+//num--;
+//num--;
+//num--;
+//num--;
+//num--;
+
+num += 5;
+num -= 5;
+num *= 5;
+num /= 2;
+
+console.log(num);
