@@ -127,6 +127,7 @@ console.log("End");
 */
 
 // Control flow while
+
 /* let x = 0;
 while (x < 7) {
   console.log(x);
@@ -141,4 +142,24 @@ while (x) {
   x = false;
 }
 
-console.log("Log End");
+// console.log("Log End");
+
+// Control Flow Switch
+let y = 2;
+switch (y) {
+  case 1: {
+    console.log("I am case 1");
+    break;
+  }
+  case 2: {
+    console.log("I am case 2");
+    break;
+  }
+  case 3:
+    console.log("I am case 3");
+    break;
+
+  default:
+    console.log("Nothing");
+    break;
+}
