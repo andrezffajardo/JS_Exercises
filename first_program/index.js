@@ -114,9 +114,9 @@ const andRes = true && false;
 const notRes = !false;
 // console.log(notRes);
 
-// Control flow
+// Control flow if
 
-const age = 6;
+/* const age = 6;
 if (age > 5 && age < 18) {
   console.log("The kid can play");
 } else {
@@ -124,3 +124,21 @@ if (age > 5 && age < 18) {
 }
 
 console.log("End");
+*/
+
+// Control flow while
+/* let x = 0;
+while (x < 7) {
+  console.log(x);
+  x++;
+}
+
+console.log("Log End");
+ */
+let x = true;
+while (x) {
+  console.log(x);
+  x = false;
+}
+
+console.log("Log End");
