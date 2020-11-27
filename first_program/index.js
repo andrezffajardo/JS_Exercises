@@ -136,16 +136,16 @@ while (x < 7) {
 
 console.log("Log End");
  */
-let x = true;
+/* let x = true;
 while (x) {
   console.log(x);
   x = false;
-}
+} */
 
 // console.log("Log End");
 
 // Control Flow Switch
-let y = 2;
+/* let y = 2;
 switch (y) {
   case 1: {
     console.log("I am case 1");
@@ -162,4 +162,10 @@ switch (y) {
   default:
     console.log("Nothing");
     break;
+}
+ */
+// Control Flow For
+
+for (let i = 0; i < 10; i++) {
+  console.log(i);
 }
