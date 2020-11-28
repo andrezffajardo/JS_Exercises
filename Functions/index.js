@@ -28,4 +28,16 @@ function addition2(a, b, cb) {
 function callback(result) {
   console.log("result", result);
 }
-addition2(2, 3, callback);
+
+// addition2(2, 3, callback);
+
+// fat arrow functions
+
+const myFatArrowFunction = (a, b) => a + b;
+const otherFAF = (a, b) => {
+  return a + b;
+};
+
+// const r = myFatArrowFunction(1, 2);
+const r = otherFAF(1, 2);
+console.log("result", r);
