@@ -10,12 +10,22 @@ const names = ["George", "Jonas", "Philip", "Andrew", "Carl"];
 iterator(numbers);
 iterator(names); */
 
-function addition(a, b) {
+/* function addition(a, b) {
   return a + b;
 }
 
 const resultaddition1 = addition(1, 2);
 const resultaddition2 = addition(3, 4);
-const resultaddition3 = addition(resultaddition1, resultaddition2);
+const resultaddition3 = addition(resultaddition1, resultaddition2); */
 
-console.log("result", resultaddition3);
+// console.log("result", resultaddition3);
+
+function addition2(a, b, cb) {
+  const res = a + b;
+  cb(res);
+}
+
+function callback(result) {
+  console.log("result", result);
+}
+addition2(2, 3, callback);
