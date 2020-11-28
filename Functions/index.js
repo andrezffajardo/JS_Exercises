@@ -40,4 +40,10 @@ const otherFAF = (a, b) => {
 
 // const r = myFatArrowFunction(1, 2);
 const r = otherFAF(1, 2);
-console.log("result", r);
+// console.log("result", r);
+
+// Anonymous function
+
+addition2(3, 4, function (r) {
+  console.log("I am a Anonymous function and my result is: ", r);
+});
