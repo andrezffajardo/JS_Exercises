@@ -14,7 +14,7 @@ window.onload = () => {
     const elements = document.querySelectorAll("#todo-list li");
     elements.forEach((element, i) => {
       element.addEventListener("click", () => {
-        console.log(element, i);
+        element.parentNode.removeChild(element);
       });
     });
   };
