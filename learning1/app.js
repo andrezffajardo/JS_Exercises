@@ -1,5 +1,3 @@
-document.write("<h1>Hello World</h1>");
-
 let score = 10;
 
 if (score > 30) {
