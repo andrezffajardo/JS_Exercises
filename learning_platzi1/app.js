@@ -20,8 +20,12 @@ console.log(itemsFilt);*/
 
 console.log(nameitems);*/
 
-var findItem = items.find(function (item) {
+/*var findItem = items.find(function (item) {
   return item.name === "Laptop";
 });
 
-console.log(findItem);
+console.log(findItem);*/
+
+items.forEach(function (item) {
+  console.log(item.name);
+});
