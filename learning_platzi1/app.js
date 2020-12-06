@@ -14,8 +14,14 @@ var items = [
 
 console.log(itemsFilt);*/
 
-var nameitems = items.map(function (item) {
+/*var nameitems = items.map(function (item) {
   return item.name;
 });
 
-console.log(nameitems);
+console.log(nameitems);*/
+
+var findItem = items.find(function (item) {
+  return item.name === "Laptop";
+});
+
+console.log(findItem);
