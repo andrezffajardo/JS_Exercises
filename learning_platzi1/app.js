@@ -8,8 +8,14 @@ var items = [
   { name: "Teclado", cost: 500 },
 ];
 
-var itemsFilt = items.filter(function (item) {
+/*var itemsFilt = items.filter(function (item) {
   return item.cost <= 500;
 });
 
-console.log(itemsFilt);
+console.log(itemsFilt);*/
+
+var nameitems = items.map(function (item) {
+  return item.name;
+});
+
+console.log(nameitems);
