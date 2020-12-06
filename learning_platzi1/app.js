@@ -26,6 +26,12 @@ console.log(nameitems);*/
 
 console.log(findItem);*/
 
-items.forEach(function (item) {
+/*items.forEach(function (item) {
   console.log(item.name);
+});*/
+
+var cheapItems = items.some(function (item) {
+  return item.cost <= 600;
 });
+
+console.log(cheapItems);
