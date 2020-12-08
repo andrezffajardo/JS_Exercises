@@ -1,4 +1,4 @@
-var items = [
+/*var items = [
   { name: "Bicicleta", cost: 3000 },
   { name: "TV", cost: 2000 },
   { name: "Libro", cost: 320 },
@@ -6,7 +6,7 @@ var items = [
   { name: "Laptop", cost: 20000 },
   { name: "Audifonos", cost: 1500 },
   { name: "Teclado", cost: 500 },
-];
+];*/
 
 /*var itemsFilt = items.filter(function (item) {
   return item.cost <= 500;
@@ -30,8 +30,17 @@ console.log(findItem);*/
   console.log(item.name);
 });*/
 
-var cheapItems = items.some(function (item) {
+/*var cheapItems = items.some(function (item) {
   return item.cost <= 600;
 });
 
-console.log(cheapItems);
+console.log(cheapItems);*/
+
+let numArray = [1, 2, 3, 4, 5];
+
+function newNum() {
+  numArray.push(6, 7, 8);
+  console.log(numArray);
+}
+
+newNum();
