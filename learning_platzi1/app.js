@@ -45,11 +45,18 @@ function newNum() {
 
 newNum();*/
 
-let txtArray = ["Andres", "Felipe", "Juan", "Carlos"];
+/*let txtArray = ["Andres", "Felipe", "Juan", "Carlos"];
 
 function addCharact() {
   txtArray.push("Hugo", "Andrea");
   console.log(txtArray);
 }
 
-addCharact();
+addCharact();*/
+
+let array = [1, 2, 3, 4, 5];
+console.log(array);
+
+let shiftArray = array.shift();
+
+console.log(array);
