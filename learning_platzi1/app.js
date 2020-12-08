@@ -36,11 +36,20 @@ console.log(findItem);*/
 
 console.log(cheapItems);*/
 
-let numArray = [1, 2, 3, 4, 5];
+/*let numArray = [1, 2, 3, 4, 5];
 
 function newNum() {
   numArray.push(6, 7, 8);
   console.log(numArray);
 }
 
-newNum();
+newNum();*/
+
+let txtArray = ["Andres", "Felipe", "Juan", "Carlos"];
+
+function addCharact() {
+  txtArray.push("Hugo", "Andrea");
+  console.log(txtArray);
+}
+
+addCharact();
