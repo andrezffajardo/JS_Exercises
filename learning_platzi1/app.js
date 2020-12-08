@@ -54,9 +54,16 @@ function addCharact() {
 
 addCharact();*/
 
-let array = [1, 2, 3, 4, 5];
+/*let array = [1, 2, 3, 4, 5];
 console.log(array);
 
 let shiftArray = array.shift();
+
+console.log(array);*/
+
+let array = [1, 2, 3, 4, 5];
+console.log(array);
+
+let popArray = array.pop();
 
 console.log(array);
