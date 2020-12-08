@@ -61,9 +61,18 @@ let shiftArray = array.shift();
 
 console.log(array);*/
 
-let array = [1, 2, 3, 4, 5];
+/*let array = [1, 2, 3, 4, 5];
 console.log(array);
 
 let popArray = array.pop();
 
-console.log(array);
+console.log(array);*/
+
+let numArray = [4, 5, 6, 7, 8];
+
+function newNum() {
+  numArray.unshift(1, 2, 3);
+  console.log(numArray);
+}
+
+newNum();
