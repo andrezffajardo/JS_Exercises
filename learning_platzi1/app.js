@@ -36,6 +36,8 @@ console.log(findItem);*/
 
 console.log(cheapItems);*/
 
+// .push() method
+
 /*let numArray = [1, 2, 3, 4, 5];
 
 function newNum() {
@@ -54,6 +56,8 @@ function addCharact() {
 
 addCharact();*/
 
+// .shift() method
+
 /*let array = [1, 2, 3, 4, 5];
 console.log(array);
 
@@ -61,12 +65,16 @@ let shiftArray = array.shift();
 
 console.log(array);*/
 
+// .pop() method
+
 /*let array = [1, 2, 3, 4, 5];
 console.log(array);
 
 let popArray = array.pop();
 
 console.log(array);*/
+
+// .unshift() method
 
 let numArray = [4, 5, 6, 7, 8];
 
