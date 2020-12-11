@@ -76,11 +76,15 @@ console.log(array);*/
 
 // .unshift() method
 
-let numArray = [4, 5, 6, 7, 8];
+/*let numArray = [4, 5, 6, 7, 8];
 
 function newNum() {
   numArray.unshift(1, 2, 3);
   console.log(numArray);
 }
 
-newNum();
+newNum();*/
+
+var items = ["Teclado", "mouse", "audífonos"];
+var eraseItem = items.splice(2, 1);
+console.log(items);
