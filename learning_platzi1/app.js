@@ -85,6 +85,6 @@ function newNum() {
 
 newNum();*/
 
-var items = ["Teclado", "mouse", "audífonos"];
+var items = ["Teclado", "mouse", "audífonos", "Monitor"];
 var eraseItem = items.splice(2, 1);
 console.log(items);
