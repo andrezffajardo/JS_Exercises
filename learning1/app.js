@@ -21,9 +21,14 @@ switch (typeCard) {
     console.log("No Card");
 }*/
 
-let count = 0;
+/*let count = 0;
 
 while (count <= 50) {
   console.log(count);
   count++;
-}
+}*/
+
+let names = ["Ryan", "Joe", "Jhon"];
+
+console.log(names[2]);
+console.log(names.length);
