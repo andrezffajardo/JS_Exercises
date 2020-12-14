@@ -33,6 +33,9 @@ let names = ["Ryan", "Joe", "Jhon"];
 /*console.log(names[2]);
 console.log(names.length);*/
 
-for (let i = 0; i < names.length; i++) {
+/*for (let i = 0; i < names.length; i++) {
+  console.log(names[i]);
+}*/
+for (let i = names.length - 1; i >= 0; i--) {
   console.log(names[i]);
 }
