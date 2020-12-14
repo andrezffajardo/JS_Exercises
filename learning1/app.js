@@ -8,7 +8,7 @@ if (score > 30) {
   console.log("You need to follow this tutorial");
 }*/
 
-let typeCard = "Credit Card";
+/*let typeCard = "Credit Card";
 
 switch (typeCard) {
   case "Debit Card":
@@ -19,4 +19,11 @@ switch (typeCard) {
     break;
   default:
     console.log("No Card");
+}*/
+
+let count = 0;
+
+while (count <= 50) {
+  console.log(count);
+  count++;
 }
