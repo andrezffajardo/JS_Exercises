@@ -30,5 +30,9 @@ while (count <= 50) {
 
 let names = ["Ryan", "Joe", "Jhon"];
 
-console.log(names[2]);
-console.log(names.length);
+/*console.log(names[2]);
+console.log(names.length);*/
+
+for (let i = 0; i < names.length; i++) {
+  console.log(names[i]);
+}
