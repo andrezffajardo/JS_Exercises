@@ -28,14 +28,18 @@ while (count <= 50) {
   count++;
 }*/
 
-let names = ["Ryan", "Joe", "Jhon"];
+/*let names = ["Ryan", "Joe", "Jhon"];
 
-/*console.log(names[2]);
-console.log(names.length);*/
+console.log(names[2]);
+console.log(names.length);
 
-/*for (let i = 0; i < names.length; i++) {
-  console.log(names[i]);
-}*/
-for (let i = names.length - 1; i >= 0; i--) {
+for (let i = 0; i < names.length; i++) {
   console.log(names[i]);
 }
+for (let i = names.length - 1; i >= 0; i--) {
+  console.log(names[i]);
+}*/
+function greeting(name) {
+  console.log("Hello " + name);
+}
+greeting("Mark");
