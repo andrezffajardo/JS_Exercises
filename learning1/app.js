@@ -43,3 +43,5 @@ function greeting(name) {
   console.log("Hello " + name);
 }
 greeting("Mark");
+greeting("Lisa");
+greeting("Jhon");
