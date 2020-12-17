@@ -39,9 +39,15 @@ for (let i = 0; i < names.length; i++) {
 for (let i = names.length - 1; i >= 0; i--) {
   console.log(names[i]);
 }*/
-function greeting(name) {
+/*function greeting(name) {
   console.log("Hello " + name);
 }
 greeting("Mark");
 greeting("Lisa");
-greeting("Jhon");
+greeting("Jhon");*/
+
+function add(n1, n2) {
+  console.log(n1 + n2);
+}
+
+add(3, 2);
