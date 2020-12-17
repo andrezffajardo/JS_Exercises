@@ -51,3 +51,4 @@ function add(n1, n2) {
 }
 
 add(3, 2);
+add(300, 200);
