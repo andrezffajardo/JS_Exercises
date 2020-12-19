@@ -34,3 +34,4 @@ function printNameUppercase({ name }) {
 
 printNameUppercase(andres);
 printNameUppercase(jose);
+printNameUppercase({ name: "Carlos" });
