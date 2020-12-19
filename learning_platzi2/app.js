@@ -39,9 +39,11 @@ printNameUppercase(jose);
 //printNameUppercase({ name: "Carlos" });*/
 
 // Functions Exercise
-function printNameAndAge({ name, age }) {
+/*function printNameAndAge({ name, age }) {
   //var { name, age } = person;
   console.log(`Hi, my name is ${name.toUpperCase()} and I am ${age} old`);
-}
+}*/
+var printNameAndAge = ({ name, age }) =>
+  console.log(`Hi, my name is ${name.toUpperCase()} and I am ${age} old`);
 printNameAndAge(andres);
 printNameAndAge(jose);
