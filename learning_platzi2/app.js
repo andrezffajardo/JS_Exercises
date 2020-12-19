@@ -28,10 +28,12 @@ var jose = {
   age: 38,
 };
 
-function printNameUppercase({ name }) {
+function printNameUppercase(person) {
+  //var name = person.name
+  var { name } = person;
   console.log(name.toUpperCase());
 }
 
 printNameUppercase(andres);
 printNameUppercase(jose);
-printNameUppercase({ name: "Carlos" });
+//printNameUppercase({ name: "Carlos" });
