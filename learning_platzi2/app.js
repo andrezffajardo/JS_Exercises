@@ -104,7 +104,7 @@ printProfession(andres);
 printAdult(andres);*/
 
 //Age Execise 2
-const ADULT_AGE = 18;
+/*const ADULT_AGE = 18;
 
 function adultPerson(person) {
   return person.age >= ADULT_AGE;
@@ -119,4 +119,29 @@ function printAdult(person) {
 }
 
 printAdult(andres);
+printAdult(jose);*/
+
+//Age Execise 3 arrow functions
+const ADULT_AGE = 18;
+
+let adultPerson = ({ age }) => age >= ADULT_AGE;
+
+function printAdult(person) {
+  if (adultPerson(person)) {
+    console.log(`${person.name} is adult`);
+  } else {
+    console.log(`${person.name} is younger`);
+  }
+}
+
+function accessPermission(person) {
+  if (!adultPerson(person)) {
+    console.log("Access Denied");
+  } else {
+    console.log("Access");
+  }
+}
+printAdult(andres);
 printAdult(jose);
+accessPermission(andres);
+accessPermission(jose);
