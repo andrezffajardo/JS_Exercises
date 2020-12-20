@@ -145,3 +145,14 @@ printAdult(andres);
 printAdult(jose);
 accessPermission(andres);
 accessPermission(jose);
+
+//Age younger exercise arrow function
+let youngPerson = (person) => !adultPerson(person);
+
+let printYounger = (person) =>
+  youngPerson(person)
+    ? console.log(`${person.name} is younger`)
+    : console.log(`${person.name} is adult`);
+
+printYounger(andres);
+printYounger(jose);
