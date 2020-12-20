@@ -19,7 +19,13 @@ printNameUppercase(name);*/
 var andres = {
   name: "Andres",
   lastName: "Fajardo",
-  age: 40,
+  age: 17,
+  engineer: false,
+  chef: false,
+  singer: false,
+  dj: false,
+  guitarist: false,
+  dronePilot: true,
 };
 
 var jose = {
@@ -49,11 +55,48 @@ printNameUppercase(jose);
 printNameAndAge(andres);
 printNameAndAge(jose);*/
 
-function birthday(person) {
+/*function birthday(person) {
   return {
     ...person,
     age: person.age + 1,
   };
 }
 console.log(andres);
-console.log(birthday(andres));
+console.log(birthday(andres));*/
+
+function printProfession(person) {
+  console.log(`${person.name} is:`);
+  if (person.engineer) {
+    console.log("Engineer");
+  } else {
+    console.log("Is not engineer");
+  }
+  if (person.chef) {
+    console.log("Chef");
+  }
+  if (person.singer) {
+    console.log("Singer");
+  }
+  if (person.dj) {
+    console.log("DJ");
+  }
+  if (person.guitarist) {
+    console.log("Guitarist");
+  }
+  if (person.dronePilot) {
+    console.log("Drone Pilot");
+  }
+}
+
+printProfession(andres);
+
+function printAdult(person) {
+  console.log(`${person.name} is: `);
+  if (person.age >= 18) {
+    console.log("adult");
+  } else {
+    console.log("younger");
+  }
+}
+
+printAdult(andres);
