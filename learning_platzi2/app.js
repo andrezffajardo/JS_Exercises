@@ -212,4 +212,10 @@ do {
   counter++;
 } while (!raining());
 
-console.log(`I went to see if it rained ${counter} times`);
+// challenge
+
+if (counter > 1) {
+  console.log(`I went to see if it rained ${counter} times`);
+} else {
+  console.log(`I went to see if it rained ${counter} time`);
+}
