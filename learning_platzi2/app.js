@@ -160,7 +160,7 @@ printYounger(jose);
 
 // For statement Exercise
 
-console.log(`At the year beginning ${andres.name} weighs ${andres.weight} kg`);
+//console.log(`At the year beginning ${andres.name} weighs ${andres.weight} kg`);
 
 const INCREASED_WEIGHT = 0.3;
 const DAYS_OF_THE_YEAR = 365;
@@ -173,15 +173,31 @@ const gainWeight = (person) => (person.weight += INCREASED_WEIGHT);
 
 const loseWeight = (person) => (person.weight -= INCREASED_WEIGHT);
 
-for (var i = 1; i <= DAYS_OF_THE_YEAR; i++) {
+/*for (var i = 1; i <= DAYS_OF_THE_YEAR; i++) {
   let r = Math.random();
   if (r < 0.25) {
     gainWeight(andres);
   } else if (r < 0.5) {
     loseWeight(andres);
   }
+}*/
+const eataLot = () => Math.random() < 0.3;
+const doesExercise = () => Math.random() < 0.4;
+const GOAL = andres.weight - 3;
+let days = 0;
+
+while (andres.weight > GOAL) {
+  if (eataLot()) {
+    gainWeight(andres);
+  }
+  if (doesExercise()) {
+    loseWeight(andres);
+  }
+  days += 1;
 }
 
-console.log(
+/*console.log(
   `At the year ending ${andres.name} weighs ${andres.weight.toFixed(1)} kg`
-);
+);*/
+
+console.log(`${days} days passed until ${andres.name} lose 3kg`);
