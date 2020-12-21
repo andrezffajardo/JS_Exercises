@@ -26,6 +26,7 @@ var andres = {
   dj: false,
   guitarist: false,
   dronePilot: true,
+  weight: 70,
 };
 
 var jose = {
@@ -156,3 +157,31 @@ let printYounger = (person) =>
 
 printYounger(andres);
 printYounger(jose);
+
+// For statement Exercise
+
+console.log(`At the year beginning ${andres.name} weighs ${andres.weight} kg`);
+
+const INCREASED_WEIGHT = 0.3;
+const DAYS_OF_THE_YEAR = 365;
+
+// function gainWeight (person) {
+//  return person.weight += 0.2
+// }
+
+const gainWeight = (person) => (person.weight += INCREASED_WEIGHT);
+
+const loseWeight = (person) => (person.weight -= INCREASED_WEIGHT);
+
+for (var i = 1; i <= DAYS_OF_THE_YEAR; i++) {
+  let r = Math.random();
+  if (r < 0.25) {
+    gainWeight(andres);
+  } else if (r < 0.5) {
+    loseWeight(andres);
+  }
+}
+
+console.log(
+  `At the year ending ${andres.name} weighs ${andres.weight.toFixed(1)} kg`
+);
