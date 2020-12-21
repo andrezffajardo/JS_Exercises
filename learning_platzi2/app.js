@@ -201,3 +201,15 @@ while (andres.weight > GOAL) {
 );*/
 
 console.log(`${days} days passed until ${andres.name} lose 3kg`);
+
+// Do while Example
+
+let counter = 0;
+
+const raining = () => Math.random() < 0.25;
+
+do {
+  counter++;
+} while (!raining());
+
+console.log(`I went to see if it rained ${counter} times`);
