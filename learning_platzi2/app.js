@@ -16,7 +16,7 @@ printNameUppercase(name);*/
 
 //objects
 
-var andres = {
+/*var andres = {
   name: "Andres",
   lastName: "Fajardo",
   age: 17,
@@ -33,7 +33,7 @@ var jose = {
   name: "Jose",
   lastName: "Caicedo",
   age: 38,
-};
+};*/
 
 /*function printNameUppercase(person) {
   //var name = person.name
@@ -65,7 +65,7 @@ printNameAndAge(jose);*/
 console.log(andres);
 console.log(birthday(andres));*/
 
-function printProfession(person) {
+/*function printProfession(person) {
   console.log(`${person.name} is:`);
   if (person.engineer) {
     console.log("Engineer");
@@ -89,7 +89,7 @@ function printProfession(person) {
   }
 }
 
-printProfession(andres);
+printProfession(andres);*/
 
 //Age Exercise
 
@@ -123,7 +123,7 @@ printAdult(andres);
 printAdult(jose);*/
 
 //Age Execise 3 arrow functions
-const ADULT_AGE = 18;
+/*const ADULT_AGE = 18;
 
 let adultPerson = ({ age }) => age >= ADULT_AGE;
 
@@ -145,10 +145,10 @@ function accessPermission(person) {
 printAdult(andres);
 printAdult(jose);
 accessPermission(andres);
-accessPermission(jose);
+accessPermission(jose);*/
 
 //Age younger exercise arrow function
-let youngPerson = (person) => !adultPerson(person);
+/*let youngPerson = (person) => !adultPerson(person);
 
 let printYounger = (person) =>
   youngPerson(person)
@@ -156,22 +156,25 @@ let printYounger = (person) =>
     : console.log(`${person.name} is adult`);
 
 printYounger(andres);
-printYounger(jose);
+printYounger(jose);*/
 
 // For statement Exercise
 
 //console.log(`At the year beginning ${andres.name} weighs ${andres.weight} kg`);
 
-const INCREASED_WEIGHT = 0.3;
-const DAYS_OF_THE_YEAR = 365;
+/*const INCREASED_WEIGHT = 0.3;
+const DAYS_OF_THE_YEAR = 365;*/
 
+// ***Normal Function***
+//-------------------------------------
 // function gainWeight (person) {
 //  return person.weight += 0.2
 // }
+//-------------------------------------
 
-const gainWeight = (person) => (person.weight += INCREASED_WEIGHT);
+/*const gainWeight = (person) => (person.weight += INCREASED_WEIGHT);
 
-const loseWeight = (person) => (person.weight -= INCREASED_WEIGHT);
+const loseWeight = (person) => (person.weight -= INCREASED_WEIGHT);*/
 
 /*for (var i = 1; i <= DAYS_OF_THE_YEAR; i++) {
   let r = Math.random();
@@ -181,7 +184,7 @@ const loseWeight = (person) => (person.weight -= INCREASED_WEIGHT);
     loseWeight(andres);
   }
 }*/
-const eataLot = () => Math.random() < 0.3;
+/*const eataLot = () => Math.random() < 0.3;
 const doesExercise = () => Math.random() < 0.4;
 const GOAL = andres.weight - 3;
 let days = 0;
@@ -194,25 +197,27 @@ while (andres.weight > GOAL) {
     loseWeight(andres);
   }
   days += 1;
-}
+}*/
 
 /*console.log(
   `At the year ending ${andres.name} weighs ${andres.weight.toFixed(1)} kg`
 );*/
 
-console.log(`${days} days passed until ${andres.name} lose 3kg`);
+/*console.log(`${days} days passed until ${andres.name} lose 3kg`);*/
 
 // Do while Example
+//-------------------------------------------
 
-let counter = 0;
+/*let counter = 0;
 
 const raining = () => Math.random() < 0.25;
 
 do {
   counter++;
-} while (!raining());
+} while (!raining());*/
 
 // challenge
+//--------------------------------------------
 
 /*if (counter > 1) {
   console.log(`I went to see if it rained ${counter} times`);
@@ -221,7 +226,88 @@ do {
 }*/
 
 // Challenge -> Conditional (ternary) operator
+//----------------------------------------------
 
-console.log(
+/*console.log(
   `I went to see if it rained ${counter} ${counter > 1 ? "times" : "time"}`
-);
+);*/
+
+// Switch Example
+//-----------------------------
+
+// Objeto que guarda los horoscope, se imprimen loshoroscope
+//sin importar como se escriban May-Min, con o sin tilde.
+const horoscope = {
+  aries: "21 march - 19 april",
+  taurus: "20 april - 20 may",
+  gemini: "21 may - 20 june",
+  cancer: "21 june - 22 july",
+  leo: "23 july - 22 august",
+  virgo: "23 august - 22 september",
+  libra: "23 september - 22 october",
+  scorpio: "23 october - 21 november",
+  sagittarius: "22 november - 21 december",
+  capricorn: "22 december - 19 january",
+  aquarius: "20 january - 18 february",
+  pisces: "19 february - 20 march",
+};
+
+// Evalua el signo y regresa el horóscopo
+const calculateSign = function (sign) {
+  switch (sign.toLowerCase()) {
+    case "aries":
+      console.log(horoscope.aries);
+      break;
+    case "taurus":
+      console.log(horoscope.taurus);
+      break;
+    case "gemini":
+      console.log(horoscope.gemini);
+      break;
+    case "cancer":
+      console.log(horoscope.cancer);
+      break;
+    case "leo":
+      console.log(horoscope.leo);
+      break;
+    case "virgo":
+      console.log(horoscope.virgo);
+      break;
+    case "libra":
+      console.log(horoscope.libra);
+      break;
+    case "scorpio":
+      console.log(horoscope.scorpio);
+      break;
+    case "sagittarius":
+      console.log(horoscope.sagittarius);
+      break;
+    case "capricorn":
+      console.log(horoscope.capricorn);
+      break;
+    case "aquarius":
+      console.log(horoscope.aquarius);
+      break;
+    case "pisces":
+      console.log(horoscope.pisces);
+      break;
+    default:
+      console.log("This zodiac sign don't exist");
+      break;
+  }
+};
+
+// Arrow function que sirve para seguir preguntando el signo que quieres ver hasta que se escriba la palabra "salir"
+var askSign = () =>
+  (zodiacSign = prompt(
+    "What is your zodiac sign?, write leave if you want to end."
+  ));
+
+// Asigna valor a la variable signoZodiacal para entrar al while
+askSign();
+
+// Se ejecuta mientras el usuario no escriba la palabra "salir"
+while (zodiacSign.toLowerCase() !== "leave") {
+  calculateSign(zodiacSign);
+  askSign();
+}
