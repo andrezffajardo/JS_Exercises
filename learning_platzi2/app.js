@@ -214,8 +214,14 @@ do {
 
 // challenge
 
-if (counter > 1) {
+/*if (counter > 1) {
   console.log(`I went to see if it rained ${counter} times`);
 } else {
   console.log(`I went to see if it rained ${counter} time`);
-}
+}*/
+
+// Challenge -> Conditional (ternary) operator
+
+console.log(
+  `I went to see if it rained ${counter} ${counter > 1 ? "times" : "time"}`
+);
