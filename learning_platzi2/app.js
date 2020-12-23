@@ -237,7 +237,7 @@ do {
 
 // Objeto que guarda los horoscope, se imprimen loshoroscope
 //sin importar como se escriban May-Min, con o sin tilde.
-const horoscope = {
+/*const horoscope = {
   aries: "21 march - 19 april",
   taurus: "20 april - 20 may",
   gemini: "21 may - 20 june",
@@ -310,4 +310,69 @@ askSign();
 while (zodiacSign.toLowerCase() !== "leave") {
   calculateSign(zodiacSign);
   askSign();
-}
+}*/
+
+// Array intro
+
+var sacha = {
+  name: "Sacha",
+  lastName: "Lifszyc",
+  height: 1.72,
+};
+
+var alan = {
+  name: "Alan",
+  lastName: "Perez",
+  height: 1.86,
+};
+
+var marty = {
+  name: "Martin",
+  lastName: "Gomez",
+  height: 1.85,
+};
+
+var dario = {
+  name: "Dario",
+  lastName: "Juarez",
+  height: 1.71,
+};
+
+var vicky = {
+  name: "Vicky",
+  lastName: "Zapata",
+  height: 1.56,
+};
+
+var paula = {
+  name: "Paula",
+  lastName: "Barros",
+  height: 1.76,
+};
+
+//const isTall = (person) => person.height > 1.8;
+
+// se puede desglosar:
+const isTall = ({ height }) => height > 1.8;
+
+var persons = [sacha, alan, marty, dario, vicky, paula];
+
+var tallPersons = persons.filter(isTall);
+
+// En la documentación oficial muestran que se puede colocar adentro de filter la función
+//var tallPersons = persons.filter((isTall = (person) => person.height > 1.8));
+
+console.log(tallPersons);
+
+/*for (var i = 0; i < persons.length; i++) {
+  var eachPerson = persons[i];
+  console.log(`${eachPerson.name} is ${eachPerson.height} mts`);
+}*/
+
+// Challenge:
+
+const isShort = ({ height }) => height < 1.8;
+
+var shortPersons = persons.filter(isShort);
+
+console.log(shortPersons);
