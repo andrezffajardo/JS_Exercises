@@ -372,7 +372,5 @@ console.log(tallPersons);
 // Challenge:
 
 const isShort = ({ height }) => height < 1.8;
-
 var shortPersons = persons.filter(isShort);
-
 console.log(shortPersons);
