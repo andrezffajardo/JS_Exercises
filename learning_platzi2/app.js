@@ -364,8 +364,10 @@ var tallPersons = persons.filter(isTall);
 
 const heightToCms = (person) => {
   //person.height = person.height * 100
-  person.height *= 100;
-  return person;
+  return {
+    ...person,
+    height: person.height * 100,
+  };
 };
 
 var personsCms = persons.map(heightToCms);
