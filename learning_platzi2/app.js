@@ -362,7 +362,17 @@ var tallPersons = persons.filter(isTall);
 // En la documentación oficial muestran que se puede colocar adentro de filter la función
 //var tallPersons = persons.filter((isTall = (person) => person.height > 1.8));
 
-console.log(tallPersons);
+const heightToCms = (person) => {
+  //person.height = person.height * 100
+  person.height *= 100;
+  return person;
+};
+
+var personsCms = persons.map(heightToCms);
+
+console.log(personsCms);
+
+//console.log(tallPersons);
 
 /*for (var i = 0; i < persons.length; i++) {
   var eachPerson = persons[i];
@@ -373,4 +383,4 @@ console.log(tallPersons);
 
 const isShort = ({ height }) => height < 1.8;
 var shortPersons = persons.filter(isShort);
-console.log(shortPersons);
+//console.log(shortPersons);
