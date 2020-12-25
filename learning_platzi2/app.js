@@ -318,36 +318,42 @@ var sacha = {
   name: "Sacha",
   lastName: "Lifszyc",
   height: 1.72,
+  quantityBooks: 111,
 };
 
 var alan = {
   name: "Alan",
   lastName: "Perez",
   height: 1.86,
+  quantityBooks: 78,
 };
 
 var marty = {
   name: "Martin",
   lastName: "Gomez",
   height: 1.85,
+  quantityBooks: 132,
 };
 
 var dario = {
   name: "Dario",
   lastName: "Juarez",
   height: 1.71,
+  quantityBooks: 90,
 };
 
 var vicky = {
   name: "Vicky",
   lastName: "Zapata",
   height: 1.56,
+  quantityBooks: 91,
 };
 
 var paula = {
   name: "Paula",
   lastName: "Barros",
   height: 1.76,
+  quantityBooks: 182,
 };
 
 //const isTall = (person) => person.height > 1.8;
@@ -384,3 +390,15 @@ console.table(personsCms);
 const isShort = ({ height }) => height < 1.8;
 var shortPersons = persons.filter(isShort);
 //console.log(shortPersons);
+
+// Reducer()
+
+/*const reducer = (acum, person) => {
+  return acum + person.quantityBooks;
+};*/
+
+const reducer = (accum, { quantityBooks }) => accum + quantityBooks;
+
+var totalBooks = persons.reduce(reducer, 0);
+
+console.log(`In total everyone have ${totalBooks} books`);
