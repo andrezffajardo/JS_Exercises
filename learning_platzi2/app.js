@@ -314,7 +314,7 @@ while (zodiacSign.toLowerCase() !== "leave") {
 
 // Array intro
 
-var sacha = {
+/*var sacha = {
   name: "Sacha",
   lastName: "Lifszyc",
   height: 1.72,
@@ -354,21 +354,21 @@ var paula = {
   lastName: "Barros",
   height: 1.76,
   quantityBooks: 182,
-};
+};*/
 
 //const isTall = (person) => person.height > 1.8;
 
 // se puede desglosar:
-const isTall = ({ height }) => height > 1.8;
+/*const isTall = ({ height }) => height > 1.8;
 
 var persons = [sacha, alan, marty, dario, vicky, paula];
 
-var tallPersons = persons.filter(isTall);
+var tallPersons = persons.filter(isTall);*/
 
 // En la documentación oficial muestran que se puede colocar adentro de filter la función
 //var tallPersons = persons.filter((isTall = (person) => person.height > 1.8));
 
-const heightToCms = (person) => ({
+/*const heightToCms = (person) => ({
   //person.height = person.height * 100
   ...person,
   height: person.height * 100,
@@ -376,7 +376,7 @@ const heightToCms = (person) => ({
 
 var personsCms = persons.map(heightToCms);
 
-console.table(personsCms);
+console.table(personsCms);*/
 
 //console.log(tallPersons);
 
@@ -387,8 +387,8 @@ console.table(personsCms);
 
 // Challenge:
 
-const isShort = ({ height }) => height < 1.8;
-var shortPersons = persons.filter(isShort);
+/*const isShort = ({ height }) => height < 1.8;
+var shortPersons = persons.filter(isShort);*/
 //console.log(shortPersons);
 
 // Reducer()
@@ -397,8 +397,22 @@ var shortPersons = persons.filter(isShort);
   return acum + person.quantityBooks;
 };*/
 
-const reducer = (accum, { quantityBooks }) => accum + quantityBooks;
+/*const reducer = (accum, { quantityBooks }) => accum + quantityBooks;
 
 var totalBooks = persons.reduce(reducer, 0);
 
-console.log(`In total everyone have ${totalBooks} books`);
+console.log(`In total everyone have ${totalBooks} books`);*/
+
+// Classes in JS
+
+function person(name, lastName) {
+  this.name = name;
+  this.lastName = lastName;
+}
+
+person.prototype.greeting = function () {
+  console.log(`Hi, my name is ${this.name} ${this.lastName}`);
+};
+
+var andres = new person("Andres", "Fajardo");
+andres.greeting();
