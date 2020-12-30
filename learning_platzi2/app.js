@@ -405,14 +405,20 @@ console.log(`In total everyone have ${totalBooks} books`);*/
 
 // Classes in JS
 
-function person(name, lastName) {
+function person(name, lastName, height) {
   this.name = name;
   this.lastName = lastName;
+  this.height = height;
 }
 
+// Exercise Classes
 person.prototype.greeting = function () {
-  console.log(`Hi, my name is ${this.name} ${this.lastName}`);
+  this.height > 1.8
+    ? console.log(`Hi, my name is ${this.name} ${this.lastName} and I am tall`)
+    : console.log(
+        `Hi, my name is ${this.name} ${this.lastName} and I am short`
+      );
 };
 
-var andres = new person("Andres", "Fajardo");
+var andres = new person("Andres", "Fajardo", 1.6);
 andres.greeting();
