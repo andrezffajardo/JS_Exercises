@@ -405,14 +405,14 @@ console.log(`In total everyone have ${totalBooks} books`);*/
 
 // Classes in JS
 
-function person(name, lastName, height) {
+/*function person(name, lastName, height) {
   this.name = name;
   this.lastName = lastName;
   this.height = height;
-}
+}*/
 
 // Exercise Classes
-person.prototype.greeting = function () {
+/*person.prototype.greeting = function () {
   this.height > 1.8
     ? console.log(`Hi, my name is ${this.name} ${this.lastName} and I am tall`)
     : console.log(
@@ -421,4 +421,34 @@ person.prototype.greeting = function () {
 };
 
 var andres = new person("Andres", "Fajardo", 1.6);
-andres.greeting();
+andres.greeting();*/
+
+// JS Classes extends
+
+class Person {
+  constructor(name, lastName, height) {
+    this.name = name;
+    this.lastName = lastName;
+    this.height = height;
+  }
+
+  greeting() {
+    console.log(`Hi, my name is ${this.name} ${this.lastName}`);
+  }
+
+  iamHeight() {
+    return this.height > 1.8;
+  }
+}
+
+class dev extends Person {
+  constructor(name, lastName, height) {
+    super(name, lastName, height);
+  }
+
+  greeting() {
+    console.log(
+      `Hi, my name is ${this.name} ${this.lastName} and I am developer`
+    );
+  }
+}
