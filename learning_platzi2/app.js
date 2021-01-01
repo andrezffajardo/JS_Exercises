@@ -432,8 +432,14 @@ class Person {
     this.height = height;
   }
 
-  greeting() {
-    console.log(`Hi, my name is ${this.name} ${this.lastName}`);
+  greeting(fn) {
+    //var name = this.name;
+    //var lastName = this.lastName;
+    var { name, lastName } = this;
+    console.log(`Hi, my name is ${name} ${lastName}`);
+    if (fn) {
+      fn(name, lastName);
+    }
   }
 
   iamHeight() {
@@ -446,9 +452,24 @@ class dev extends Person {
     super(name, lastName, height);
   }
 
-  greeting() {
-    console.log(
-      `Hi, my name is ${this.name} ${this.lastName} and I am developer`
-    );
+  greeting(fn) {
+    var { name, lastName } = this;
+    console.log(`Hi, my name is ${name} ${lastName} and I am developer`);
+    if (fn) {
+      fn(name, lastName, true);
+    }
   }
 }
+
+function askGreeting(name, lastName, isDev) {
+  console.log(`Good day ${name} ${lastName}`);
+  if (isDev) {
+    console.log(`Oh, you are developer!`);
+  }
+}
+
+var andres = new Person("Andres", "Fajardo", 1.7);
+var Vale = new dev("Valentine", "Klauss", 1.65);
+
+andres.greeting(askGreeting);
+Vale.greeting(askGreeting);
