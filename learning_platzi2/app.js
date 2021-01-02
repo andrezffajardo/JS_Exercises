@@ -423,7 +423,7 @@ console.log(`In total everyone have ${totalBooks} books`);*/
 var andres = new person("Andres", "Fajardo", 1.6);
 andres.greeting();*/
 
-// JS Classes extends
+// JS Classes extends and passing functions as parameter of another function
 
 class Person {
   constructor(name, lastName, height) {
