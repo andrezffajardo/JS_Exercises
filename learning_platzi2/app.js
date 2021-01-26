@@ -424,6 +424,7 @@ var andres = new person("Andres", "Fajardo", 1.6);
 andres.greeting();*/
 
 // JS Classes extends and passing functions as parameter of another function
+//----------------------------------------------------------------------------
 
 class Person {
   constructor(name, lastName, height) {
@@ -438,7 +439,7 @@ class Person {
     var { name, lastName } = this;
     console.log(`Hi, my name is ${name} ${lastName}`);
     if (fn) {
-      fn(name, lastName);
+      fn(name, lastName, false);
     }
   }
 
