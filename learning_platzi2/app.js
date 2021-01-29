@@ -474,3 +474,6 @@ var Vale = new dev("Valentine", "Klauss", 1.65);
 
 andres.greeting(askGreeting);
 Vale.greeting(askGreeting);
+
+//  Asynchronous Javascript
+// ------------------------
