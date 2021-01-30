@@ -477,3 +477,20 @@ Vale.greeting(askGreeting);
 
 //  Asynchronous Javascript
 // ------------------------
+
+const API_URL = "https://swapi.dev/api/";
+const PEOPLE_URL = "people/:id";
+const opts = { crossDomain: true };
+
+const onCharacterResponse = function (character) {
+  console.log(`Hola, yo soy ${character.name}`);
+};
+
+function getCharacter(id) {
+  const url = `${API_URL}${PEOPLE_URL.replace(":id", id)}`;
+  $.get(url, opts, onCharacterResponse);
+}
+
+getCharacter(1);
+getCharacter(2);
+getCharacter(3);
