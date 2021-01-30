@@ -426,7 +426,7 @@ andres.greeting();*/
 // JS Classes extends and passing functions as parameter of another function
 //----------------------------------------------------------------------------
 
-class Person {
+/*class Person {
   constructor(name, lastName, height) {
     this.name = name;
     this.lastName = lastName;
@@ -473,20 +473,22 @@ var andres = new Person("Andres", "Fajardo", 1.7);
 var Vale = new dev("Valentine", "Klauss", 1.65);
 
 andres.greeting(askGreeting);
-Vale.greeting(askGreeting);
+Vale.greeting(askGreeting);*/
 
 //  Asynchronous Javascript
 // ------------------------
 
-const API_URL = "https://swapi.dev/api/";
+/*const API_URL = "https://swapi.dev/api/";
 const PEOPLE_URL = "people/:id";
 const opts = { crossDomain: true };
 
 function getCharacter(id, callback) {
   const url = `${API_URL}${PEOPLE_URL.replace(":id", id)}`;
 
-  $.get(url, opts, callback).fail(function () {
-    console.log(`Error, the character ${id} can not get`);
+  $
+    .get(url, opts, callback)
+    .fail(function () {
+     console.log(`Error, the character ${id} can not get`);
   });
 }
 
@@ -512,4 +514,31 @@ getCharacter(1, function (character) {
       });
     });
   });
-});
+});*/
+
+// Promises Javascript
+//---------------------
+const API_URL = "https://swapi.dev/api/";
+const PEOPLE_URL = "people/:id";
+const opts = { crossDomain: true };
+
+function getCharacter(id) {
+  return new Promise(function (resolve, reject) {
+    const url = `${API_URL}${PEOPLE_URL.replace(":id", id)}`;
+    $.get(url, opts, function (data) {
+      resolve(data);
+    }).fail(function () {
+      reject(id);
+    });
+  });
+}
+
+function onError(id) {
+  console.log(`Error, the character ${id} can not get`);
+}
+
+getCharacter(1)
+  .then(function (character) {
+    console.log(`Hi, I am ${character.name}`);
+  })
+  .catch(onError);
