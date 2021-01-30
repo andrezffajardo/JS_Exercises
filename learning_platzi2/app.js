@@ -485,21 +485,29 @@ const opts = { crossDomain: true };
 function getCharacter(id, callback) {
   const url = `${API_URL}${PEOPLE_URL.replace(":id", id)}`;
 
-  $.get(url, opts, function (character) {
-    console.log(`Hola, yo soy ${character.name}`);
-
-    if (callback) {
-      callback();
-    }
+  $.get(url, opts, callback).fail(function () {
+    console.log(`Error, the character ${id} can not get`);
   });
 }
 
-getCharacter(1, function () {
-  getCharacter(2, function () {
-    getCharacter(3, function () {
-      getCharacter(4, function () {
-        getCharacter(5, function () {
-          getCharacter(6);
+getCharacter(1, function (character) {
+  console.log(`Hola, yo soy ${character.name}`);
+
+  getCharacter(2, function (character) {
+    console.log(`Hola, yo soy ${character.name}`);
+
+    getCharacter(3, function (character) {
+      console.log(`Hola, yo soy ${character.name}`);
+
+      getCharacter(4, function (character) {
+        console.log(`Hola, yo soy ${character.name}`);
+
+        getCharacter(5, function (character) {
+          console.log(`Hola, yo soy ${character.name}`);
+
+          getCharacter(6, function (character) {
+            console.log(`Hola, yo soy ${character.name}`);
+          });
         });
       });
     });
