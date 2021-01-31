@@ -540,5 +540,25 @@ function onError(id) {
 getCharacter(1)
   .then(function (character) {
     console.log(`Hi, I am ${character.name}`);
+    return getCharacter(2);
+  })
+  .then(function (character) {
+    console.log(`Hi, I am ${character.name}`);
+    return getCharacter(3);
+  })
+  .then(function (character) {
+    console.log(`Hi, I am ${character.name}`);
+    return getCharacter(4);
+  })
+  .then(function (character) {
+    console.log(`Hi, I am ${character.name}`);
+    return getCharacter(5);
+  })
+  .then(function (character) {
+    console.log(`Hi, I am ${character.name}`);
+    return getCharacter(6);
+  })
+  .then(function (character) {
+    console.log(`Hi, I am ${character.name}`);
   })
   .catch(onError);
