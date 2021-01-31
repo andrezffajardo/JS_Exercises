@@ -564,16 +564,17 @@ getCharacter(1)
   })
   .catch(onError);*/
 
-var ids = [1, 2, 3, 4, 5, 6];
+async function getCharacters() {
+  var ids = [1, 2, 3, 4, 5, 6];
+  var promises = ids.map(function (id) {
+    return getCharacter(id);
+  });
+  try {
+    var characters = await Promise.all(promises);
+    console.log(characters);
+  } catch (id) {
+    onError(id);
+  }
+}
 
-var promises = ids.map(function (id) {
-  return getCharacter(id);
-});
-
-// Write as Arrow Function-----------------------------------
-//var promises = ids.map(id => getCharacter(id));
-//--------------------------------------------------
-
-Promise.all(promises)
-  .then((characters) => console.log(characters))
-  .catch(onError);
+getCharacters();
