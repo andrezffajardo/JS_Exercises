@@ -537,6 +537,7 @@ function onError(id) {
   console.log(`Error, the character ${id} can not get`);
 }
 
+/*
 getCharacter(1)
   .then(function (character) {
     console.log(`Hi, I am ${character.name}`);
@@ -561,4 +562,18 @@ getCharacter(1)
   .then(function (character) {
     console.log(`Hi, I am ${character.name}`);
   })
+  .catch(onError);*/
+
+var ids = [1, 2, 3, 4, 5, 6];
+
+var promises = ids.map(function (id) {
+  return getCharacter(id);
+});
+
+// Write as Arrow Function-----------------------------------
+//var promises = ids.map(id => getCharacter(id));
+//--------------------------------------------------
+
+Promise.all(promises)
+  .then((characters) => console.log(characters))
   .catch(onError);
