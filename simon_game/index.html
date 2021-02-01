@@ -104,15 +104,76 @@
       class Juego {
         constructor() {
           this.inicializar();
+          this.genSequence();
+          this.nextLevel();
         }
 
         inicializar() {
+          this.chooseColour = this.chooseColour.bind(this);
           btnEmpezar.classList.add("hide");
+          this.level = 1;
+          this.colors = {
+            celeste,
+            violeta,
+            naranja,
+            verde,
+          };
+        }
+
+        genSequence() {
+          this.sequence = new Array(10)
+            .fill(0)
+            .map((n) => Math.floor(Math.random() * 4));
+        }
+
+        nextLevel() {
+          this.iluminateSeq();
+          this.addEventClick();
+        }
+
+        transformNumToColour(num) {
+          switch (num) {
+            case 0:
+              return "celeste";
+            case 1:
+              return "violeta";
+            case 2:
+              return "naranja";
+            case 3:
+              return "verde";
+          }
+        }
+
+        iluminateSeq() {
+          for (let i = 0; i < this.level; i++) {
+            const colour = this.transformNumToColour(this.sequence[i]);
+            setTimeout(() => this.iluminateColour(colour), 1000 * i);
+          }
+        }
+
+        iluminateColour(colour) {
+          this.colors[colour].classList.add("light");
+          setTimeout(() => this.offColour(colour), 350);
+        }
+
+        offColour(colour) {
+          this.colors[colour].classList.remove("light");
+        }
+
+        addEventClick() {
+          this.colors.celeste.addEventListener("click", this.chooseColour);
+          this.colors.verde.addEventListener("click", this.chooseColour);
+          this.colors.violeta.addEventListener("click", this.chooseColour);
+          this.colors.naranja.addEventListener("click", this.chooseColour);
+        }
+
+        chooseColour(ev) {
+          console.log(this);
         }
       }
 
       function empezarJuego() {
-        var juego = new Juego();
+        window.juego = new Juego();
       }
     </script>
   </body>
