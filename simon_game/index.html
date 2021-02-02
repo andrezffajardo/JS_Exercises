@@ -82,6 +82,10 @@
       .hide {
         display: none;
       }
+
+      * {
+        font-family: "Arial";
+      }
     </style>
   </head>
   <body>
@@ -94,13 +98,14 @@
         Empezar a jugar!
       </button>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
     <script>
       const celeste = document.getElementById("celeste");
       const violeta = document.getElementById("violeta");
       const naranja = document.getElementById("naranja");
       const verde = document.getElementById("verde");
       const btnEmpezar = document.getElementById("btnEmpezar");
-      const ULTIMO_LEVEL = 10;
+      const ULTIMO_LEVEL = 3;
 
       class Juego {
         constructor() {
@@ -112,7 +117,8 @@
         inicializar() {
           this.nextLevel = this.nextLevel.bind(this);
           this.chooseColor = this.chooseColor.bind(this);
-          btnEmpezar.classList.add("hide");
+          this.toggleBtnStart();
+
           this.level = 1;
           this.colors = {
             celeste,
@@ -122,6 +128,13 @@
           };
         }
 
+        toggleBtnStart() {
+          if (btnEmpezar.classList.contains("hide")) {
+            btnEmpezar.classList.remove("hide");
+          } else {
+            btnEmpezar.classList.add("hide");
+          }
+        }
         genSequence() {
           this.sequence = new Array(ULTIMO_LEVEL)
             .fill(0)
@@ -200,14 +213,27 @@
               this.level++;
               this.removeEventsClick();
               if (this.level === ULTIMO_LEVEL + 1) {
-                // win!
+                this.winGame();
               } else {
                 setTimeout(this.nextLevel, 1500);
               }
             }
           } else {
-            // Lose
+            this.loseGame();
           }
+        }
+
+        winGame() {
+          swal("Ohh", "You Win!!", "success").then(() => {
+            this.inicializar();
+          });
+        }
+
+        loseGame() {
+          swal("Ohh", "You lose :(", "error").then(() => {
+            this.removeEventsClick();
+            this.inicializar();
+          });
         }
       }
 
