@@ -100,16 +100,18 @@
       const naranja = document.getElementById("naranja");
       const verde = document.getElementById("verde");
       const btnEmpezar = document.getElementById("btnEmpezar");
+      const ULTIMO_LEVEL = 10;
 
       class Juego {
         constructor() {
           this.inicializar();
           this.genSequence();
-          this.nextLevel();
+          setTimeout(this.nextLevel, 500);
         }
 
         inicializar() {
-          this.chooseColour = this.chooseColour.bind(this);
+          this.nextLevel = this.nextLevel.bind(this);
+          this.chooseColor = this.chooseColor.bind(this);
           btnEmpezar.classList.add("hide");
           this.level = 1;
           this.colors = {
@@ -121,17 +123,18 @@
         }
 
         genSequence() {
-          this.sequence = new Array(10)
+          this.sequence = new Array(ULTIMO_LEVEL)
             .fill(0)
             .map((n) => Math.floor(Math.random() * 4));
         }
 
         nextLevel() {
+          this.subLevel = 0;
           this.iluminateSeq();
           this.addEventClick();
         }
 
-        transformNumToColour(num) {
+        transformNumToColor(num) {
           switch (num) {
             case 0:
               return "celeste";
@@ -144,31 +147,67 @@
           }
         }
 
-        iluminateSeq() {
-          for (let i = 0; i < this.level; i++) {
-            const colour = this.transformNumToColour(this.sequence[i]);
-            setTimeout(() => this.iluminateColour(colour), 1000 * i);
+        transformColorToNum(color) {
+          switch (color) {
+            case "celeste":
+              return 0;
+            case "violeta":
+              return 1;
+            case "naranja":
+              return 2;
+            case "verde":
+              return 3;
           }
         }
 
-        iluminateColour(colour) {
-          this.colors[colour].classList.add("light");
-          setTimeout(() => this.offColour(colour), 350);
+        iluminateSeq() {
+          for (let i = 0; i < this.level; i++) {
+            const color = this.transformNumToColor(this.sequence[i]);
+            setTimeout(() => this.iluminateColor(color), 1000 * i);
+          }
         }
 
-        offColour(colour) {
-          this.colors[colour].classList.remove("light");
+        iluminateColor(color) {
+          this.colors[color].classList.add("light");
+          setTimeout(() => this.offColor(color), 350);
+        }
+
+        offColor(color) {
+          this.colors[color].classList.remove("light");
         }
 
         addEventClick() {
-          this.colors.celeste.addEventListener("click", this.chooseColour);
-          this.colors.verde.addEventListener("click", this.chooseColour);
-          this.colors.violeta.addEventListener("click", this.chooseColour);
-          this.colors.naranja.addEventListener("click", this.chooseColour);
+          this.colors.celeste.addEventListener("click", this.chooseColor);
+          this.colors.verde.addEventListener("click", this.chooseColor);
+          this.colors.violeta.addEventListener("click", this.chooseColor);
+          this.colors.naranja.addEventListener("click", this.chooseColor);
         }
 
-        chooseColour(ev) {
-          console.log(this);
+        removeEventsClick() {
+          this.colors.celeste.removeEventListener("click", this.chooseColor);
+          this.colors.verde.removeEventListener("click", this.chooseColor);
+          this.colors.violeta.removeEventListener("click", this.chooseColor);
+          this.colors.naranja.removeEventListener("click", this.chooseColor);
+        }
+
+        chooseColor(ev) {
+          const nameColor = ev.target.dataset.color;
+          const numColor = this.transformColorToNum(nameColor);
+          this.iluminateColor(nameColor);
+          if (numColor === this.sequence[this.subLevel]) {
+            this.subLevel++;
+            if (this.subLevel === this.level) {
+              this.level++;
+              this.removeEventsClick();
+              if (this.level === ULTIMO_LEVEL + 1) {
+                // win!
+              } else {
+                setTimeout(this.nextLevel, 1500);
+              }
+            }
+          } else {
+            // Lose
+          }
         }
       }
 
