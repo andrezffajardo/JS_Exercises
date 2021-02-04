@@ -578,3 +578,24 @@ async function getCharacters() {
 }
 
 getCharacters();
+
+// Change the context of a function in Javascript
+
+const pablo = {
+  nombre: "Pablo",
+  apellido: "Andrés",
+};
+const mariela = {
+  nombre: "Mariela",
+  apellido: "Riesnik",
+};
+
+function saludar(saludo = "Hola") {
+  console.log(`${saludo}, mi nombre es ${this.nombre}`);
+}
+setTimeout(saludar.bind(pablo, "Hola loco!"), 1000);
+// Hola loco!, mi nombre es Pablo
+
+//también se puede agragar en la declaración de la constante.
+const saludarAPablo = saludar.bind(pablo, "Hola loco!!");
+// Hola loco!!, mi nombre es Pablo
