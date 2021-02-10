@@ -518,7 +518,7 @@ getCharacter(1, function (character) {
 
 // Promises Javascript
 //---------------------
-const API_URL = "https://swapi.dev/api/";
+/* const API_URL = "https://swapi.dev/api/";
 const PEOPLE_URL = "people/:id";
 const opts = { crossDomain: true };
 
@@ -535,7 +535,7 @@ function getCharacter(id) {
 
 function onError(id) {
   console.log(`Error, the character ${id} can not get`);
-}
+} */
 
 /*
 getCharacter(1)
@@ -564,7 +564,7 @@ getCharacter(1)
   })
   .catch(onError);*/
 
-async function getCharacters() {
+/* async function getCharacters() {
   var ids = [1, 2, 3, 4, 5, 6];
   var promises = ids.map(function (id) {
     return getCharacter(id);
@@ -598,4 +598,38 @@ setTimeout(saludar.bind(pablo, "Hola loco!"), 1000);
 
 //también se puede agragar en la declaración de la constante.
 const saludarAPablo = saludar.bind(pablo, "Hola loco!!");
-// Hola loco!!, mi nombre es Pablo
+// Hola loco!!, mi nombre es Pablo */
+
+
+//Ejemplo cuenta regresiva
+function cuentaRegresiva(num) {
+  num = --num;
+
+  if (num > 0) {
+    console.log(num);
+    cuentaRegresiva(num);
+  } else {
+    console.log("Happy New Year!!");
+  }
+}
+
+cuentaRegresiva(10);
+
+// Example second largest number
+function secondLargestNumber(numbers) {
+  let first = numbers[0];
+  let second = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] > first) {
+      second = first;
+      first = numbers[i];
+    }
+    if (numbers[i] > second && numbers[i] < first) {
+      second = numbers[i];
+    }
+  }
+  return [second, first]; //Devuelve dos valores de la funcion
+}
+
+let nums = [8, 4, 6, 10, 9, 11, 25, 22];
+console.log(secondLargestNumber(nums));
