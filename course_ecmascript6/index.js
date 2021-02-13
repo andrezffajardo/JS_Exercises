@@ -58,3 +58,55 @@ let person2 = {
 
 let {name2, age} = person2;
 console.log(name2, age);
+
+// SPREAD Operator
+//-----------------
+
+let team1 = ['Oscar', 'Julian', 'Ricardo'];
+let team2 = ['Valeria', 'Yesica', 'Camila'];
+
+let education = ['David', ...team1, ...team2];
+
+console.log(education);
+
+// Object propieties
+//-------------------
+
+let name1 = 'oscar';
+let age = 32;
+
+//es5
+obj = { name1: name1, age: age};
+console.log(obj);
+
+//es6
+obj2 = { name1, age};
+console.log(obj2);
+
+// Arrow functions
+//----------------
+
+const names = [
+  { name: 'Andres', age: 40},
+  { name: 'Juli', age: 32}
+]
+
+let listOfNames = names.map(function (item) {
+  console.log(item.name);
+})
+
+//es6
+let listOfNames2 = names.map(item => console.log(item.name));
+
+const listOfNames3 = (name, age, country) => {
+  ...
+}
+
+const listOfNames4 name => {
+  ...
+}
+
+const square = num => num * num;
+
+
+
