@@ -108,5 +108,76 @@ const listOfNames4 name => {
 
 const square = num => num * num;
 
+// Promises
+//----------
+// True
+const helloPromise = () => {
+  return new Promise((resolve, reject) => {
+    if (true) {
+      resolve('Hey!');
+    } else {
+      reject('Ups!!');
+    }
+  });
+}
+
+helloPromise()
+.then(response => console.log(response))
+.then(() => console.log('Hello'))
+.catch(error => console.log(error));
+
+
+// False
+const helloPromise = () => {
+  return new Promise((resolve, reject) => {
+    if (false) {
+      resolve('Hey!');
+    } else {
+      reject('Ups!!');
+    }
+  });
+}
+
+helloPromise()
+.then(response => console.log(response))
+.catch(error => console.log(error));
+
+// Classes in es6
+class calculator {
+  constructor() {
+    this.valueA = 0;
+    this.valueB = 0;
+  }
+  sum(valueA, valueB) {
+    this.valueA = valueA;
+    this.valueB = valueB;
+    return this.valueA + this.valueB;
+  }
+}
+
+  const calc = new calculator;
+  console.log(calc.sum(4,3));
+
+// Generators
+function* helloWorld() {
+  if (true) {
+    yield 'Hello, ';
+  }
+  if (true) {
+    yield 'World';
+  }
+}
+
+const generatorHello = helloWorld();
+console.log(generatorHello.next().value);
+console.log(generatorHello.next().value);
+console.log(generatorHello.next().value);
+
+
+
+
+
+
+
 
 
