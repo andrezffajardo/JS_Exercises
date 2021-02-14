@@ -174,6 +174,26 @@ console.log(generatorHello.next().value);
 console.log(generatorHello.next().value);
 
 
+//****es7****
+//-----------
+
+// includes method
+
+let numbers = [1, 2, 3, 5, 8, 9];
+
+if (numbers.includes(8)) {
+  console.log('Yes, 8 is on list');
+} else {
+  console.log('No, 8 is not on list')
+}
+
+// Exponentiation operator
+
+let base = 5;
+let exponent = 2;
+let result = base ** exponent;
+
+console.log(result);
 
 
 
