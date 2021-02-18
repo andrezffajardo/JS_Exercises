@@ -227,6 +227,18 @@ console.log(string.padEnd(12,' -----'));
 console.log('food'.padEnd(12,'  -----'));
 
 
+//****es9****
+//-----------
 
+// Spread Operator
+
+const obj = {
+  name: 'Oscar',
+  age: 32,
+  country: 'MX'
+};
+
+let { name, ...all } = obj;
+console.log(name, all);
 
 
