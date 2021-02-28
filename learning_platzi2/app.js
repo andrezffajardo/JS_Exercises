@@ -426,7 +426,7 @@ andres.greeting();*/
 // JS Classes extends and passing functions as parameter of another function
 //----------------------------------------------------------------------------
 
-/*class Person {
+/* class Person {
   constructor(name, lastName, height) {
     this.name = name;
     this.lastName = lastName;
@@ -462,7 +462,7 @@ class dev extends Person {
   }
 }
 
-function askGreeting(name, lastName, isDev) {
+function answerGreeting(name, lastName, isDev) {
   console.log(`Good day ${name} ${lastName}`);
   if (isDev) {
     console.log(`Oh, you are developer!`);
@@ -472,8 +472,8 @@ function askGreeting(name, lastName, isDev) {
 var andres = new Person("Andres", "Fajardo", 1.7);
 var Vale = new dev("Valentine", "Klauss", 1.65);
 
-andres.greeting(askGreeting);
-Vale.greeting(askGreeting);*/
+andres.greeting(answerGreeting);
+Vale.greeting(answerGreeting); */
 
 //  Asynchronous Javascript
 // ------------------------
@@ -488,7 +488,7 @@ function getCharacter(id, callback) {
   $
     .get(url, opts, callback)
     .fail(function () {
-     console.log(`Error, the character ${id} can not get`);
+    console.log(`Error, the character ${id} can not get`);
   });
 }
 
@@ -602,7 +602,7 @@ const saludarAPablo = saludar.bind(pablo, "Hola loco!!");
 
 
 //Ejemplo cuenta regresiva
-function cuentaRegresiva(num) {
+/* function cuentaRegresiva(num) {
   num = --num;
 
   if (num > 0) {
@@ -613,10 +613,10 @@ function cuentaRegresiva(num) {
   }
 }
 
-cuentaRegresiva(10);
+cuentaRegresiva(10); */
 
 // Example second largest number
-function secondLargestNumber(numbers) {
+/* function secondLargestNumber(numbers) {
   let first = numbers[0];
   let second = 0;
   for (let i = 0; i < numbers.length; i++) {
@@ -632,4 +632,73 @@ function secondLargestNumber(numbers) {
 }
 
 let nums = [8, 4, 6, 10, 9, 11, 25, 22];
-console.log(secondLargestNumber(nums));
+console.log(secondLargestNumber(nums)); */
+
+/* class Persona {
+	constructor(nombre, apellido, altura, genero){
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.altura = altura;
+		this.genero = genero;
+	}
+	saludar(fn){
+		console.log(`Hola me llamo ${this.nombre} ${this.apellido}`);
+		if(fn){
+			var {nombre, apellido} = this;
+			fn(nombre, apellido);
+		}
+	}
+	soyAltX(){
+		var altX = this.genero == 'masculino' ? 'alto' : 'alta';
+		var string = this.altura >= 1.8 ? `Soy ${this.nombre} ${this.apellido} y definitivamente soy ${altX}.` 
+										: `Soy ${this.nombre} ${this.apellido} y no, no soy ${altX}.`;
+		console.log(string);
+	}
+}
+
+class Desarrollador extends Persona {
+	constructor(nombre, apellido, altura){
+		super(nombre, apellido, altura);
+	}
+	saludar(fn){
+		console.log(`Hola, me llamo ${this.nombre} ${this.apellido} y soy desarrollader.`);
+		if(fn){
+			var {nombre, apellido} = this;
+			fn(nombre, apellido, true);
+		}
+	}
+}
+
+function responderSaludo(nombre, apellido, esDev){
+	console.log(`Buen día ${nombre} ${apellido}.`);
+	if (esDev) {
+		console.log(`Ah mirá, no sabía que eras dev.`);
+	}
+}
+
+var pablo = new Persona('Pablo', 'Andrés', 1.78, 'masculino');
+var joaquin = new Desarrollador('Joaquín', 'Perez', 1.91, 'masculino');
+var rosa = new Persona('Rosa', 'Mosqueta', 1.81, 'femenino');
+var elis = new Persona('Elis', 'Detta', 1.73, 'femenino');
+
+pablo.saludar();
+joaquin.saludar(responderSaludo);
+rosa.saludar(responderSaludo);
+elis.saludar(responderSaludo); */
+
+function sum(num1, num2) {
+  return num1 + num2;
+}
+
+function mult(num1, num2) {
+  return num1 * num2;
+}
+
+
+
+function calc(num1, num2, callback) {
+  return callback(num1, num2);
+}
+
+console.log(calc(2, 3, sum))
+console.log(calc(2, 5, mult))
