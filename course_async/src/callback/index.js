@@ -20,14 +20,14 @@ console.log(calc(5, 8, mult))
 
 function date(callback) {
   console.log(new Date);  // Muestra la primera fecha y hora
-  setTimeout(function () {
-    let date = new Date;
-    callback(date);
+  setTimeout(function () { // Deja pendiente por ejecutar la funcion, pasados los 4seg la pasa al Callback Queue y la pasa al Call Stack al estar este vacio
+    let date = new Date; // Guarda la nueva fecha y hora pasados los 4seg
+    callback(date); // Ejecuta el Callback que es un sinonimo de printDate
   }, 4000)
 }
 
-function printDate(dateNow) {
-  console.log(dateNow);
+function printDate(dateNow) { // Se ejecuta por el callback que viene de la primera funcion
+  console.log(dateNow);// Imprime la fecha y hora pasados 4seg que trae del setTimeout que esta dentro de la funcion date
 }
 
 date(printDate); // Ejecuta la función date que lleva como parametro otra funcion
